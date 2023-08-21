@@ -39,6 +39,22 @@ const routes = [
           title: '自定义指令点击',
         },
       },
+      {
+        path: '/todo',
+        name: 'Todo',
+        component: () => import('@/pages/todo'),
+        meta: {
+          title: '待做事项',
+        },
+      },
+      // {
+      //   path: '/extend',
+      //   name: 'Extend',
+      //   component: () => import('@/pages/extend'),
+      //   meta: {
+      //     title: '组件继承',
+      //   },
+      // },
     ],
   },
 ];
