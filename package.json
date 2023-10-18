@@ -22,8 +22,6 @@
     "html2canvas": "^1.4.1",
     "lib-flexible-computer": "^1.0.2",
     "md5": "^2.3.0",
-    "postcss-px2rem": "^0.3.0",
-    "px2rem-loader": "^0.1.9",
     "raw-loader": "^4.0.2",
     "vue": "^2.6.14",
     "vue-agile": "^2.0.0",
@@ -44,7 +42,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
     "node-sass": "^6.0.0",
-    "postcss-loader": "^3.0.0",
     "prettier": "^2.4.1",
     "sass-loader": "^12.0.0",
     "vue-template-compiler": "^2.6.14"
