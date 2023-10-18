@@ -20,7 +20,7 @@
                 </el-form-item>
 
                 <el-form-item style="text-align: center;">
-                    <el-button icon="el-icon-document" type="primary" @click="handleClick">加密</el-button>
+                    <el-button icon="el-icon-document" type="primary" @click="handleClick">格式化</el-button>
                     <el-button icon="el-icon-refresh" @click="handleReset(false)">清空</el-button>
                 </el-form-item>
             </el-form>
