@@ -9,7 +9,6 @@ const request = axios.create({
 const errorHandler = (error) => {
   if (error.response) {
     const data = error.response.data;
-    console.log(error.response, '-----------');
   }
   return Promise.reject(error);
 };
