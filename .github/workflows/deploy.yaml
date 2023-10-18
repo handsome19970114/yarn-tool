@@ -18,6 +18,9 @@ jobs:
         with:
           node-version: 14 # 设置你的 Node.js 版本
 
+      - name: Install postcss
+        run: npm i postcss@8 -D
+
       - name: Install dependencies
         run: npm install
 
