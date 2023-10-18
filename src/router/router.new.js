@@ -12,7 +12,7 @@ const routes = [
       title: '首页',
     },
     component: () => import('@/layouts/AsideMenu.vue'),
-    redirect: {path: '/home'},
+    redirect: {path: '/tool'},
     children: [
       {
         path: '/home',
