@@ -1,9 +1,9 @@
 {
   "name": "vue-learn",
-  "version": "0.1.0",
+  "version": "23.10.19",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "node ./script/version.js && vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
