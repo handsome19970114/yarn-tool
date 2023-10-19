@@ -74,7 +74,11 @@ export default {
     mounted() {
         this.$set(this.form, "rule", initRule);
         this.$set(this.form, "time", dayjs(new Date()).format(initRule));
+        this.currTime = dayjs().format(initRule);
         this.createTimeout()
+    },
+    beforeDestroy() {
+        this.timeout && clearTimeout(this.timeout);
     },
     methods: {
         createTimeout() {
