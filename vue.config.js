@@ -17,6 +17,15 @@ module.exports = {
         ws: false,
         changeOrigin: true,
       },
+
+      '^/chp': {
+        target: 'https://api.shadiao.pro/',
+        // pathRewrite: {
+        //   '^/chp': '',
+        // },
+        ws: false,
+        changeOrigin: true,
+      },
     },
   },
   configureWebpack: {

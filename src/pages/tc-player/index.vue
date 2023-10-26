@@ -6,7 +6,7 @@
             <li class="device-item" v-for="device in devices" :key="device.id">
                 <el-card class="box-card">
                     <i class="el-icon-video-play" @click="handlePlay(device)"></i>
-                    <!-- <TcPlayer :videoURL="device.videoURL" controls="none"></TcPlayer> -->
+                    <TcPlayer :videoURL="device.videoURL" controls="none"></TcPlayer>
                 </el-card>
             </li>
         </ul>
@@ -64,7 +64,8 @@ export default {
                 return {}
             }
             return res.data.statusInfo.reduce((curr, next) => {
-                return curr[next.deviceOuterId] = next.status
+                curr[next.deviceOuterId] = next.status
+                return curr
             }, {});
         },
 
@@ -120,7 +121,7 @@ li {
     .el-card {
         .el-card__body {
             padding: 0;
-            min-height: 300px;
+            min-height: 240px;
 
             .el-icon-video-play {
                 font-size: 36px;

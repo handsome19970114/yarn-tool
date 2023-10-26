@@ -1,17 +1,21 @@
-import AsideMenu from '@/layouts/AsideMenu';
+/**
+ * @desc 参数说明
+ * @param { Boolean } wetherDisplayInTheMenu 是否显示在菜单栏 true显示 false隐藏
+ */
 const routes = [
   {
     path: '/login',
     name: 'Login',
+    meta: {title: '登录'},
     component: () => import('@/pages/login.vue'),
+    wetherDisplayInTheMenu: false,
   },
   {
     path: '/',
     name: 'Main',
-    meta: {
-      title: '首页',
-    },
+    meta: {title: '控制台', icon: 'el-icon-house'},
     component: () => import('@/layouts/AsideMenu.vue'),
+    wetherDisplayInTheMenu: true,
     redirect: {path: '/tool'},
     children: [
       {
@@ -19,56 +23,8 @@ const routes = [
         name: 'Home',
         component: () => import('@/pages/home'),
         meta: {
-          title: '首页-1',
-        },
-      },
-      {
-        path: '/minio',
-        name: 'Minio',
-        component: () => import('@/pages/minio'),
-        meta: {
-          title: 'Minio测试',
-        },
-      },
-
-      {
-        path: '/clickoutside',
-        name: 'ClickOutSide',
-        component: () => import('@/pages/clickoutside'),
-        meta: {
-          title: '自定义指令点击',
-        },
-      },
-      {
-        path: '/todo',
-        name: 'Todo',
-        component: () => import('@/pages/todo'),
-        meta: {
-          title: '待做事项',
-        },
-      },
-      {
-        path: '/swiper',
-        name: 'Swiper',
-        component: () => import('@/pages/swiper'),
-        meta: {
-          title: '轮播图',
-        },
-      },
-      {
-        path: '/xlsx',
-        name: 'xlsx',
-        component: () => import('@/pages/xlsx'),
-        meta: {
-          title: 'xlsx文件读取',
-        },
-      },
-      {
-        path: '/echarts-map',
-        name: 'Eharts-Map',
-        component: () => import('@/pages/echarts-map'),
-        meta: {
-          title: 'echarts地图',
+          title: '其他测试',
+          icon: 'el-icon-monitor',
         },
       },
 
@@ -78,15 +34,7 @@ const routes = [
         component: () => import('@/pages/img-thief/index.vue'),
         meta: {
           title: '图片调色盘',
-        },
-      },
-
-      {
-        path: '/router-skip',
-        name: 'router-skip',
-        component: () => import('@/pages/router-skip'),
-        meta: {
-          title: '链接跳转',
+          icon: 'el-icon-pie-chart',
         },
       },
 
@@ -96,16 +44,93 @@ const routes = [
         component: () => import('@/pages/tool'),
         meta: {
           title: '工具集成',
+          icon: 'el-icon-coin',
         },
       },
+
       {
-        path: '/tc-player',
-        name: 'tc-player',
-        component: () => import('@/pages/tc-player'),
+        path: '/assort',
+        component: () => import('@/pages/assort'),
         meta: {
-          title: '腾讯视频',
+          title: '配套',
+          icon: 'el-icon-document',
         },
       },
+
+      // {
+      //   path: '/router-skip',
+      //   name: 'router-skip',
+      //   component: () => import('@/pages/router-skip'),
+      //   meta: {
+      //     title: '链接跳转',
+      //   },
+      // },
+      // {
+      //   path: '/tc-player',
+      //   name: 'tc-player',
+      //   component: () => import('@/pages/tc-player'),
+      //   meta: {
+      //     title: '腾讯视频',
+      //   },
+      // },
+
+      // {
+      //   path: '/extend',
+      //   name: 'extend',
+      //   component: () => import('@/pages/extend'),
+      //   meta: {
+      //     title: '组件继承',
+      //   },
+      // },
+      // {
+      //   path: '/minio',
+      //   name: 'Minio',
+      //   component: () => import('@/pages/minio'),
+      //   meta: {
+      //     title: 'Minio测试',
+      //   },
+      // },
+
+      // {
+      //   path: '/clickoutside',
+      //   name: 'ClickOutSide',
+      //   component: () => import('@/pages/clickoutside'),
+      //   meta: {
+      //     title: '自定义指令点击',
+      //   },
+      // },
+      // {
+      //   path: '/todo',
+      //   name: 'Todo',
+      //   component: () => import('@/pages/todo'),
+      //   meta: {
+      //     title: '待做事项',
+      //   },
+      // },
+      // {
+      //   path: '/swiper',
+      //   name: 'Swiper',
+      //   component: () => import('@/pages/swiper'),
+      //   meta: {
+      //     title: '轮播图',
+      //   },
+      // },
+      // {
+      //   path: '/xlsx',
+      //   name: 'xlsx',
+      //   component: () => import('@/pages/xlsx'),
+      //   meta: {
+      //     title: 'xlsx文件读取',
+      //   },
+      // },
+      // {
+      //   path: '/echarts-map',
+      //   name: 'Eharts-Map',
+      //   component: () => import('@/pages/echarts-map'),
+      //   meta: {
+      //     title: 'echarts地图',
+      //   },
+      // },
     ],
   },
 ];

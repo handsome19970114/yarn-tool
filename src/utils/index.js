@@ -55,6 +55,11 @@ export function copyText(text) {
   return result;
 }
 
+/**
+ * @desc 是否是有效的可格式化时间
+ * @param { String } dateString
+ * @return { Boolean }
+ */
 export function isDateValid(dateString) {
   if (dateString === null || dateString === undefined) {
     return false;

@@ -6,9 +6,15 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import VueAgile from 'vue-agile';
 import * as echarts from 'echarts';
-import '@/styles/variable.scss';
+import VChart from 'vue-echarts';
+import '@/styles/index.scss';
 import 'animate.css';
+import plugin from '@/utils/plugins/plugin';
+import '@/utils/tool/rem';
+
+Vue.component('v-chart', VChart);
 Vue.use(VueAgile);
+Vue.use(plugin);
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI);

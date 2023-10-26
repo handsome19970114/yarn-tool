@@ -1,25 +1,17 @@
 <template>
-    <el-menu ref="elMenu" router :default-active="defaultActive" :default-openeds="openeds" background-color="#f4f4f4">
-        <template v-for="item in menuList">
-            <el-submenu v-if="item.children" :index="item.path">
-                <template slot="title">
-                    <i :class="item.icon"></i>
-                    {{ item.meta.title }}
-                </template>
-                <Menu :menu-list="item.children"></Menu>
-            </el-submenu>
-
-            <el-menu-item v-else :index="item.path">
-                <i :class="item.icon"></i>
-                {{ item.meta.title }}
-            </el-menu-item>
-        </template>
+    <el-menu router :default-active="defaultActive" :default-openeds="openeds" background-color="#00061a"
+        text-color="#ffffffb3" active-text-color="#fff">
+        <MenuItem v-for="route in menuList" :route="route" :key="route.path" />
     </el-menu>
 </template>
 
 <script>
+import MenuItem from "./MenuItem";
 export default {
     name: "Menu",
+    components: {
+        MenuItem,
+    },
     props: {
         menuList: {
             type: Array,
@@ -41,8 +33,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .el-menu {
-    width: calc(100% - 1px);
+    width: 210px;
     height: 100%;
-    border-right: 1px solid #e6e6e6;
+    border-right: 1px solid #00061a;
+    user-select: none;
 }
 </style>

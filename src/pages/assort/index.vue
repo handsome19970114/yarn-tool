@@ -1,5 +1,5 @@
 <template>
-    <div class="inte-tool">
+    <div>
         <el-tabs v-model="activeTabKey">
             <el-tab-pane :label="tabPaneItem.label" :name="tabPaneItem.key" v-for="tabPaneItem in tabPanes"
                 :key="tabPaneItem.key"></el-tab-pane>

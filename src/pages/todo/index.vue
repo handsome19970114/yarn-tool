@@ -120,18 +120,19 @@ li {
     margin-bottom: 10px;
     padding: 5px 0;
     user-select: none;
-    > span {
+
+    >span {
         margin-left: 15px;
         display: inline-block;
         min-width: 200px;
     }
 
-    > input[type="checkbox"] {
+    >input[type="checkbox"] {
         transform: scale(1.5);
     }
 
     &.todo-completed {
-        > span {
+        >span {
             color: #409eff;
         }
     }

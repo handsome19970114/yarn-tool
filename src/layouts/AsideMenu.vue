@@ -20,7 +20,7 @@ export default {
         };
     },
     mounted() {
-        this.menuList = routerMap.filter((menu) => menu.name == "Main");
+        this.menuList = routerMap.filter((menu) => menu.wetherDisplayInTheMenu);
     },
 };
 </script>
@@ -33,6 +33,7 @@ export default {
 
 .aside-aside {
     overflow: auto;
+    width: auto !important;
 }
 
 .aside-main {

@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { capsRundeLogin } from "@/request/api"
+import { capsRundeLogin, getChp } from "@/request/api"
 export default {
     data() {
         return {
@@ -26,7 +26,7 @@ export default {
                     key: 1,
                     name: "大体积温控系统",
                     loginUrl: "https://cccc.ccccltd.cn/wps/portal/ywtb/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDVCAo4FTkJGTsYGBu7OJfjghBVEY0sgKgfqjsChBmGBhgFUBihkFuREGmY6KigAORUEE/dz/d5/L2dBISEvZ0FBIS9nQSEh/",
-                    indexUrl: "https://cccc.ccccltd.cn/wps/portal/ywtb/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDVCAo4FTkJGTsYGBu7OJfjghBVEY0sgKgfqjsChBmGBhgFUBihkFuREGmY6KigAORUEE/dz/d5/L2dBISEvZ0FBIS9nQSEh/"
+                    indexUrl: "https://tjkmes.com:8099/directVisualRouterUrlForOtherSys?key=94fcca791e2e4ff28422b17787009df5&pkcompany=1844&account=30&password=123"
                 },
                 {
                     key: 2,
@@ -40,6 +40,11 @@ export default {
                     loginUrl: "https://caps.runde.pro",
                     indexUrl: "https://caps.runde.pro/index/syjc"
                 },
+                {
+                    key: 4,
+                    name: "彩虹屁",
+                    isRequest: true
+                },
             ],
             skipIframeSrc: ""
         }
@@ -47,11 +52,15 @@ export default {
     methods: {
         async openModal(key) {
             let itemObj = this.list.find(item => item.key === key)
+            if (itemObj.isRequest) {
+                this.handleRequest(itemObj)
+                return
+            }
             this.skipIframeSrc = itemObj.indexUrl
             this.dialogVisible = true
             switch (key) {
                 case 1:
-                    console.log(1);
+                    this.skipIframeSrc = "https://tjkmes.com:8099/directVisualRouterUrlForOtherSys?key=94fcca791e2e4ff28422b17787009df5&pkcompany=1844&account=30&password=123"
                     break;
 
                 case 2:
@@ -103,6 +112,16 @@ export default {
 
             } catch (error) {
                 return "error"
+            }
+        },
+
+        async handleRequest(item) {
+            const { key } = item;
+            if (key === 4) {
+                const res = await getChp();
+                if (res?.data) {
+                    this.$message.success(res?.data?.text || "");
+                }
             }
         }
     }
