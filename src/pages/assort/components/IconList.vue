@@ -7,9 +7,10 @@
             </el-col>
         </el-row>
         <ul class="icon-list" v-show="filterIconList.length > 0">
-            <li class="icon-item" v-for="(icon, index) in filterIconList" :key="index" @click="handleCopy('el-' + icon)">
+            <li class="icon-item" v-for="(icon, index) in filterIconList" :key="index"
+                @click="handleCopy('el-icon-' + icon)">
                 <el-icon :name="icon"></el-icon>
-                <span>el-{{ icon }}</span>
+                <span>el-icon-{{ icon }}</span>
             </li>
 
             <div style="clear:both"></div>

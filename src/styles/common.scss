@@ -12,3 +12,9 @@
   transform-origin: left center;
   animation: rubberBand reverse;
 }
+
+.custom-message-fade-enter,
+.custom-message-fade-leave-active {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}

@@ -58,6 +58,16 @@ const routes = [
       },
 
       // {
+      //   path: '/vue-extend',
+      //   name: 'vue-extend',
+      //   component: () => import('@/pages/vue-extend'),
+      //   meta: {
+      //     title: '组件注册成方法',
+      //     icon: 'el-icon-receiving',
+      //   },
+      // },
+
+      // {
       //   path: '/router-skip',
       //   name: 'router-skip',
       //   component: () => import('@/pages/router-skip'),
@@ -132,6 +142,12 @@ const routes = [
       //   },
       // },
     ],
+  },
+
+  {
+    path: '*',
+    name: '404',
+    component: () => import('@/pages/404'),
   },
 ];
 

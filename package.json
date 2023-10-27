@@ -1,6 +1,6 @@
 {
   "name": "vue-learn",
-  "version": "23.10.26",
+  "version": "23.10.27",
   "private": true,
   "scripts": {
     "serve": "node ./script/version.js && vue-cli-service serve",
